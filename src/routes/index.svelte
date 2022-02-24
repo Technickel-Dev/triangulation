@@ -1,2 +1,17 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+	const getCursorPosition = (event) => {
+		const rect = event.currentTarget.getBoundingClientRect();
+		const x = event.clientX - rect.left;
+		const y = event.clientY - rect.top;
+		console.log('x: ' + x + ' y: ' + y);
+	};
+</script>
+
+<canvas
+	id="draw"
+	on:mousedown={(e) => {
+		getCursorPosition(e);
+	}}
+	width="500"
+	height="500"
+/>
