@@ -1,5 +1,6 @@
 <script>
 	import Output from '$lib/output.svelte';
+	import { coordinates } from '$lib/store';
 
 	let drawCanvas;
 	let pointRadius = 10;
@@ -11,9 +12,8 @@
 		return { x, y };
 	};
 
-	const placePoint = (e) => {
+	const placePoint = (x, y) => {
 		// Setup variables for circle
-		let { x, y } = getCanvasCursorPosition(e);
 		const ctx = drawCanvas.getContext('2d');
 		const START_ANGLE = 0;
 		const END_ANGLE = 2 * Math.PI;
@@ -32,7 +32,9 @@
 	class="border-2"
 	bind:this={drawCanvas}
 	on:mousedown={(e) => {
-		placePoint(e);
+		let { x, y } = getCanvasCursorPosition(e);
+		placePoint(x, y);
+		coordinates.addCoordinate(x, y);
 	}}
 	width={500}
 	height={500}
