@@ -1,4 +1,6 @@
 <script>
+	import Output from '$lib/output.svelte';
+
 	let drawCanvas;
 	let pointRadius = 10;
 
@@ -27,6 +29,7 @@
 <input type="number" bind:value={pointRadius} />
 
 <canvas
+	class="border-2"
 	bind:this={drawCanvas}
 	on:mousedown={(e) => {
 		placePoint(e);
@@ -34,3 +37,4 @@
 	width={500}
 	height={500}
 />
+<Output />
