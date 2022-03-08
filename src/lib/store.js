@@ -5,7 +5,7 @@ const coordinateStore = () => {
 
 	return {
 		subscribe,
-		addCoordinate: (x, y) => update((store) => [...store, { x, y }])
+		addCoordinate: (x, y) => update((store) => [...store, [x, y]])
 	};
 };
 

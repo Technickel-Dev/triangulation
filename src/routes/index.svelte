@@ -28,6 +28,8 @@
 
 <input type="number" bind:value={pointRadius} />
 
+{JSON.stringify($coordinates)}
+
 <canvas
 	class="border-2"
 	bind:this={drawCanvas}
