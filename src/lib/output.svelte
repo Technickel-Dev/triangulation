@@ -4,28 +4,21 @@
 
 	let svgEl;
 
-	const doTriangulation = () => {
-		const delaunay = Delaunator.from($coordinates);
-		let triangles = delaunay.triangles;
+	$: polygons = doTriangulation($coordinates);
+
+	const doTriangulation = (coordinates) => {
+		let polygons = [];
+		const triangles = Delaunator.from(coordinates).triangles;
 
 		for (let i = 0; i < triangles.length; i += 3) {
-			// Create new triangle
-			let polygon = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
-
-			// Build triangle
-			polygon.setAttribute(
-				'points',
-				`${$coordinates[triangles[i]]} ${$coordinates[triangles[i + 1]]} ${
-					$coordinates[triangles[i + 2]]
-				}`
-			);
-
-			// Fill triangle with color
-			polygon.setAttribute('fill', `black`);
-
-			// Add triangle to svg
-			svgEl.appendChild(polygon);
+			polygons.push(`
+				${coordinates[triangles[i]]} 
+				${coordinates[triangles[i + 1]]}
+				${coordinates[triangles[i + 2]]}
+			`);
 		}
+
+		return polygons;
 	};
 
 	const downloadSVG = () => {
@@ -58,5 +51,8 @@
 	viewBox="0 0 350 350"
 	xmlns="http://www.w3.org/2000/svg"
 >
+	{#each polygons as polygon}
+		<polygon points={polygon} fill="black" />
+	{/each}
 	<polygon points="0,100 50,25 50,75 100,0" fill="green" />
 </svg>
