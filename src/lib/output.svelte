@@ -35,12 +35,8 @@
 	};
 </script>
 
-<button class="bg-yellow-500 text-white py-2 px-4 rounded mr-4" on:click={downloadSVG}>
+<button class="bg-yellow-500 text-white py-2 px-4 rounded" on:click={downloadSVG}>
 	Download
-</button>
-
-<button class="bg-yellow-500 text-white py-2 px-4 rounded mr-4" on:click={doTriangulation}>
-	Calc
 </button>
 
 <svg
@@ -54,5 +50,4 @@
 	{#each polygons as polygon}
 		<polygon points={polygon} fill="black" />
 	{/each}
-	<polygon points="0,100 50,25 50,75 100,0" fill="green" />
 </svg>
