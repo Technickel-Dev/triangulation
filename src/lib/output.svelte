@@ -1,10 +1,11 @@
 <script>
-	import { coordinates } from '$lib/store';
 	import Delaunator from 'delaunator';
+	import { SVG } from '@svgdotjs/svg.js';
 
 	let svgEl;
+	let coordinates = [];
 
-	$: polygons = doTriangulation($coordinates);
+	$: polygons = doTriangulation(coordinates);
 
 	const doTriangulation = (coordinates) => {
 		let polygons = [];
@@ -21,6 +22,17 @@
 		return polygons;
 	};
 
+	const getAllCoordinates = () => {
+		let currentCoordinates = [];
+		SVG('#input-svg')
+			.find('circle')
+			.each((point) => {
+				currentCoordinates.push([point.cx(), point.cy()]);
+			});
+
+		coordinates = currentCoordinates;
+	};
+
 	const downloadSVG = () => {
 		// Create a blob from the SVG code
 		const svg = svgEl.outerHTML;
@@ -35,7 +47,7 @@
 	};
 </script>
 
-<button class="bg-yellow-500 text-white py-2 px-4 rounded" on:click={downloadSVG}>
+<button class="bg-yellow-500 text-white py-2 px-4 rounded" on:click={getAllCoordinates}>
 	Download
 </button>
 

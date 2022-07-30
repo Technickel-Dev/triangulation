@@ -1,9 +1,10 @@
 <script>
-	import DrawCanvas from '$lib/draw_canvas.svelte';
+	import InputSvg from '$lib/input_svg.svelte';
 	import FileInput from '$lib/file_input.svelte';
 	import Output from '$lib/output.svelte';
 
 	let drawCanvas;
+	let inputSVG;
 	let pointRadius = 10;
 
 	const onFileChange = (e) => {
@@ -29,5 +30,5 @@
 <input type="number" bind:value={pointRadius} />
 
 <FileInput {onFileChange} />
-<DrawCanvas {pointRadius} bind:drawCanvas />
+<InputSvg {inputSVG} {pointRadius} />
 <Output />
