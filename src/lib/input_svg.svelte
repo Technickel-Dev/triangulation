@@ -8,7 +8,6 @@
 	const placeCircle = (position) => {
 		let draw = SVG(inputSVG);
 		let circle = draw.circle(pointRadius);
-		circle.addClass('point');
 		circle.center(position.x, position.y).fill('green');
 		circle.click(handleCircleClick);
 	};
@@ -34,4 +33,4 @@
 	};
 </script>
 
-<svg id="input-svg" class="border-2" on:click={handleClick} bind:this={inputSVG} />
+<svg class="border-2" on:click={handleClick} bind:this={inputSVG} />

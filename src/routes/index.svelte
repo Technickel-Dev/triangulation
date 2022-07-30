@@ -30,5 +30,5 @@
 <input type="number" bind:value={pointRadius} />
 
 <FileInput {onFileChange} />
-<InputSvg {inputSVG} {pointRadius} />
-<Output />
+<InputSvg bind:inputSVG {pointRadius} />
+<Output {inputSVG} />

@@ -2,6 +2,7 @@
 	import Delaunator from 'delaunator';
 	import { SVG } from '@svgdotjs/svg.js';
 
+	export let inputSVG;
 	let svgEl;
 	let coordinates = [];
 
@@ -24,7 +25,7 @@
 
 	const getAllCoordinates = () => {
 		let currentCoordinates = [];
-		SVG('#input-svg')
+		SVG(inputSVG)
 			.find('circle')
 			.each((point) => {
 				currentCoordinates.push([point.cx(), point.cy()]);
