@@ -3,8 +3,8 @@
 	import { SVG } from '@svgdotjs/svg.js';
 
 	export let inputSVG;
-	export let pointCount;
 	export let outputSVG = undefined;
+	export let pointCount;
 	export let innerWidth;
 	export let calculatedHeight;
 

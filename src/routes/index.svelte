@@ -1,10 +1,11 @@
 <script>
 	import { onMount } from 'svelte';
+	import { SVG } from '@svgdotjs/svg.js';
 	import InputSVG from '$lib/input_svg.svelte';
 	import FileInput from '$lib/file_input.svelte';
 	import OutputSVG from '$lib/output_svg.svelte';
+	import { insertImage } from '$lib/svg_util';
 
-	let drawCanvas;
 	let inputSVG;
 	let outputSVG;
 	let pointRadius = 10;
@@ -14,22 +15,11 @@
 	let calculatedHeight;
 
 	const onFileChange = (e) => {
-		const selectedFile = e.target.files[0];
-		// fillBlack();
-		let img = new Image();
-		img.src = URL.createObjectURL(selectedFile);
-
-		img.onload = (e) => {
-			let image = e.target;
-
-			// Change canvas size
-			drawCanvas.height = image.height;
-			drawCanvas.width = image.width;
-
-			// Draw the image
-			const context = drawCanvas.getContext('2d');
-			context.drawImage(image, 0, 0);
-		};
+		const url = URL.createObjectURL(e.target.files[0]);
+		let input = SVG(inputSVG);
+		let output = SVG(outputSVG);
+		insertImage(input, url);
+		insertImage(output, url);
 	};
 
 	const downloadSVG = () => {
@@ -46,8 +36,9 @@
 	};
 
 	onMount(async () => {
-		calculatedHeight =
-			innerHeight - 3 * parseInt(window.getComputedStyle(document.documentElement).fontSize);
+		// Top bar is 3rem, so we remove 3 * font size from the height
+		let fontSize = parseInt(window.getComputedStyle(document.documentElement).fontSize);
+		calculatedHeight = innerHeight - 3 * fontSize;
 	});
 </script>
 
