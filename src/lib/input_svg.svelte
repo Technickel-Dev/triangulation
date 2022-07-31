@@ -1,15 +1,18 @@
 <script>
 	import { SVG } from '@svgdotjs/svg.js';
-	import { coordinates } from '$lib/store';
 
-	export let inputSVG;
+	export let inputSVG = undefined;
 	export let pointRadius = 10;
+	export let pointCount = 0;
+	export let innerWidth;
+	export let calculatedHeight;
 
 	const placeCircle = (position) => {
 		let draw = SVG(inputSVG);
 		let circle = draw.circle(pointRadius);
 		circle.center(position.x, position.y).fill('green');
 		circle.click(handleCircleClick);
+		pointCount++;
 	};
 
 	const getSVGCursorPosition = (e) => {
@@ -24,13 +27,19 @@
 	const handleClick = (e) => {
 		let point = getSVGCursorPosition(e);
 		placeCircle(point);
-		coordinates.addCoordinate(point.x, point.y);
 	};
 
 	const handleCircleClick = (e) => {
 		e.stopPropagation();
 		e.currentTarget.remove();
+		pointCount--;
 	};
 </script>
 
-<svg class="border-2" on:click={handleClick} bind:this={inputSVG} />
+<svg
+	class="border-2"
+	on:click={handleClick}
+	bind:this={inputSVG}
+	height={calculatedHeight}
+	width={innerWidth / 2}
+/>
