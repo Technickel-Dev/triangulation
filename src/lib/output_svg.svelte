@@ -1,12 +1,13 @@
 <script>
 	import Delaunator from 'delaunator';
 	import { SVG } from '@svgdotjs/svg.js';
+	import { zoom } from '$lib/svg_util';
 
 	export let inputSVG;
 	export let outputSVG = undefined;
 	export let pointCount;
-	export let innerWidth;
-	export let calculatedHeight;
+	export let innerWidth = 0;
+	export let calculatedHeight = 0;
 
 	let coordinates = [];
 
@@ -46,8 +47,10 @@
 	class="border-2"
 	width={innerWidth / 2}
 	height={calculatedHeight}
-	viewBox="0 0 350 350"
-	xmlns="http://www.w3.org/2000/svg"
+	viewBox={[0, 0, innerWidth / 2, calculatedHeight]}
+	on:mousewheel={(e) => {
+		zoom(e, outputSVG, outputSVG.getAttribute('viewBox').split(/\s+|,/));
+	}}
 >
 	{#each polygons as polygon}
 		<polygon points={polygon} fill="black" />
