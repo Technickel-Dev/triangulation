@@ -6,6 +6,7 @@
 	import OutputSVG from '$lib/output_svg.svelte';
 	import { insertImage } from '$lib/svg_util';
 
+	let canvas;
 	let inputSVG;
 	let outputSVG;
 	let pointRadius = 10;
@@ -16,10 +17,29 @@
 
 	const onFileChange = (e) => {
 		const url = URL.createObjectURL(e.target.files[0]);
+
 		let input = SVG(inputSVG);
 		let output = SVG(outputSVG);
 		insertImage(input, url);
 		insertImage(output, url);
+
+		initializeCanvas(url);
+	};
+
+	const initializeCanvas = (url) => {
+		let img = new Image();
+		img.src = url;
+
+		img.onload = (e) => {
+			let image = e.target;
+
+			// Change canvas size
+			canvas.height = image.height;
+			canvas.width = image.width;
+
+			// Draw the image
+			canvas.getContext('2d').drawImage(image, 0, 0);
+		};
 	};
 
 	const downloadSVG = () => {
@@ -54,6 +74,7 @@
 	</div>
 	<div class="flex">
 		<InputSVG bind:inputSVG bind:pointCount {pointRadius} {innerWidth} {calculatedHeight} />
-		<OutputSVG bind:outputSVG {inputSVG} {pointCount} {innerWidth} {calculatedHeight} />
+		<OutputSVG bind:outputSVG {inputSVG} {canvas} {pointCount} {innerWidth} {calculatedHeight} />
 	</div>
+	<canvas class="hidden" bind:this={canvas} />
 </div>
