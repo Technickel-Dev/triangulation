@@ -2,7 +2,7 @@
 	import { SVG } from '@svgdotjs/svg.js';
 	import { zoom } from '$lib/svg_util';
 	import Fa from 'svelte-fa';
-	import { faGear } from '@fortawesome/free-solid-svg-icons';
+	import { faGear } from '@fortawesome/free-solid-svg-icons/faGear';
 
 	export let inputSVG = undefined;
 	export let pointRadius = 10;

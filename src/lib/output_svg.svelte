@@ -3,7 +3,7 @@
 	import { SVG } from '@svgdotjs/svg.js';
 	import { zoom } from '$lib/svg_util';
 	import Fa from 'svelte-fa';
-	import { faDownload } from '@fortawesome/free-solid-svg-icons';
+	import { faDownload } from '@fortawesome/free-solid-svg-icons/faDownload';
 
 	export let canvas;
 	export let inputSVG;
