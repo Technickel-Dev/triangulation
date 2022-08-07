@@ -2,13 +2,16 @@
 	import Delaunator from 'delaunator';
 	import { SVG } from '@svgdotjs/svg.js';
 	import { zoom } from '$lib/svg_util';
+	import Fa from 'svelte-fa';
+	import { faDownload } from '@fortawesome/free-solid-svg-icons';
 
 	export let canvas;
 	export let inputSVG;
 	export let outputSVG = undefined;
 	export let pointCount;
 	export let innerWidth = 0;
-	export let calculatedHeight = 0;
+	export let innerHeight = 0;
+	export let hidden;
 
 	let coordinates = [];
 
@@ -57,14 +60,37 @@
 	const getRGBString = (colorArray) => {
 		return `rgb(${colorArray[0]}, ${colorArray[1]}, ${colorArray[2]})`;
 	};
+
+	const downloadSVG = () => {
+		// Create a blob from the SVG code
+		const svg = outputSVG.outerHTML;
+		const blob = new Blob([svg.toString()]);
+
+		// Create a temporary link to initiate the SVG file download
+		const tmpEl = document.createElement('a');
+		tmpEl.download = 'output.svg';
+		tmpEl.href = window.URL.createObjectURL(blob);
+		tmpEl.click();
+		tmpEl.remove();
+	};
 </script>
 
+<div
+	on:click={downloadSVG}
+	class:hidden
+	class="opacity-40 absolute top-8 cursor-pointer"
+	style="left: 97%;"
+>
+	<Fa size="lg" icon={faDownload} />
+</div>
+
 <svg
+	class:hidden
 	bind:this={outputSVG}
 	class="border-2"
 	width={innerWidth / 2}
-	height={calculatedHeight}
-	viewBox={[0, 0, innerWidth / 2, calculatedHeight]}
+	height={innerHeight}
+	viewBox={[0, 0, innerWidth / 2, innerHeight]}
 	on:mousewheel={(e) => {
 		zoom(e, outputSVG, outputSVG.getAttribute('viewBox').split(/\s+|,/));
 	}}

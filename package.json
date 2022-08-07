@@ -24,8 +24,12 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@fortawesome/free-brands-svg-icons": "^6.1.2",
+		"@fortawesome/free-solid-svg-icons": "^6.1.2",
 		"@svgdotjs/svg.js": "^3.1.2",
+		"daisyui": "^2.22.0",
 		"delaunator": "^5.0.0",
+		"svelte-fa": "^3.0.3",
 		"vite": "^3.0.3"
 	}
 }

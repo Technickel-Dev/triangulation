@@ -1,12 +1,16 @@
 <script>
 	import { SVG } from '@svgdotjs/svg.js';
 	import { zoom } from '$lib/svg_util';
+	import Fa from 'svelte-fa';
+	import { faGear } from '@fortawesome/free-solid-svg-icons';
 
 	export let inputSVG = undefined;
 	export let pointRadius = 10;
 	export let pointCount = 0;
 	export let innerWidth = 0;
-	export let calculatedHeight = 0;
+	export let innerHeight = 0;
+	export let hidden;
+	let isModalOpen = false;
 
 	const placeCircle = (position) => {
 		let draw = SVG(inputSVG);
@@ -37,14 +41,43 @@
 	};
 </script>
 
+<div
+	class:hidden
+	class="opacity-40 absolute top-8 cursor-pointer"
+	style="left: 47%;"
+	on:click={() => {
+		isModalOpen = true;
+	}}
+>
+	<Fa size="lg" icon={faGear} />
+</div>
+
+<div id="settings-modal" class="modal" class:modal-open={isModalOpen}>
+	<div class="modal-box relative">
+		<label
+			for="settings-modal"
+			class="btn btn-sm btn-circle absolute right-4 top-4"
+			on:click={() => {
+				isModalOpen = false;
+			}}
+		>
+			✕
+		</label>
+		<h3 class="font-bold text-lg">Settings</h3>
+		<label for="point-radius" class="mr-2">Point Radius</label>
+		<input id="point-radius" class="input" type="number" bind:value={pointRadius} />
+	</div>
+</div>
+
 <svg
+	class:hidden
 	class="border-2"
 	on:click={handleClick}
 	bind:this={inputSVG}
 	on:mousewheel={(e) => {
 		zoom(e, inputSVG, inputSVG.getAttribute('viewBox').split(/\s+|,/));
 	}}
-	height={calculatedHeight}
+	height={innerHeight}
 	width={innerWidth / 2}
-	viewBox={[0, 0, innerWidth / 2, calculatedHeight]}
+	viewBox={[0, 0, innerWidth / 2, innerHeight]}
 />
