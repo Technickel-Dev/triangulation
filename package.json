@@ -12,15 +12,15 @@
 	"devDependencies": {
 		"@sveltejs/adapter-static": "^1.0.0-next.43",
 		"@sveltejs/kit": "^1.0.0-next.504",
-		"autoprefixer": "^10.4.7",
+		"autoprefixer": "^10.4.12",
 		"eslint": "^8.20.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte3": "^4.0.0",
-		"postcss": "^8.4.14",
+		"postcss": "^8.4.16",
 		"prettier": "^2.7.1",
 		"prettier-plugin-svelte": "^2.7.0",
 		"svelte": "^3.50.1",
-		"tailwindcss": "^3.1.6"
+		"tailwindcss": "^3.1.8"
 	},
 	"type": "module",
 	"dependencies": {
@@ -30,6 +30,6 @@
 		"daisyui": "^2.22.0",
 		"delaunator": "^5.0.0",
 		"svelte-fa": "^3.0.3",
-		"vite": "^3.0.3"
+		"vite": "^3.1.3"
 	}
 }
