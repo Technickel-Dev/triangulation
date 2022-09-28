@@ -1,3 +1,46 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.tooltip {
+	cursor: help;
+}
+
+.tooltip::before,
+.tooltip::after {
+	position: absolute;
+	left: 50%;
+	opacity: 0;
+	transition: allease 0.3s;
+}
+
+/* This shapes the box containing the arrow to the information */
+.tooltip::before {
+	content: '';
+	border-left: 8px solid rgba(42, 48, 60);
+	border-right: 8px solid rgba(42, 48, 60);
+	border-bottom: 0px;
+	border-top: 10px solid rgba(0, 0, 0, 0.05);
+	padding: 0;
+	top: -20px;
+}
+
+/* This shapes the box containing the information */
+.tooltip::after {
+	content: attr(data-tooltip);
+	background: rgba(0, 0, 0, 0.4);
+	top: -20px;
+	transform: translate(-10%, -100%);
+	font-size: 14px;
+	width: 300px;
+	border-radius: 10px;
+	color: #fff;
+	padding: 14px;
+	height: fit-content;
+}
+
+/* Hover states */
+.tooltip:hover::before,
+.tooltip:hover::after {
+	opacity: 1;
+}

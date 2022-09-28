@@ -4,6 +4,8 @@
 	import FileInput from '$lib/file_input.svelte';
 	import OutputSVG from '$lib/output_svg.svelte';
 	import { insertImage } from '$lib/svg_util';
+	import Fa from 'svelte-fa';
+	import { faCircleInfo } from '@fortawesome/free-solid-svg-icons/faCircleInfo';
 
 	let canvas;
 	let inputSVG;
@@ -50,7 +52,14 @@
 	<InputSVG bind:inputSVG bind:pointCount {innerWidth} {innerHeight} {hidden} />
 	<OutputSVG bind:outputSVG {inputSVG} {canvas} {pointCount} {innerWidth} {innerHeight} {hidden} />
 	<canvas class="hidden" bind:this={canvas} />
-	<div class:hidden={!hidden} class="m-auto">
-		<FileInput {onFileChange} />
+	<div class:hidden={!hidden} class="flex">
+		<div class="m-auto">
+			<FileInput {onFileChange} />
+		</div>
+		<div class="ml-2 m-auto">
+			<div data-tooltip="Choose an image file to get started!" class="tooltip">
+				<Fa size="lg" icon={faCircleInfo} />
+			</div>
+		</div>
 	</div>
 </div>
