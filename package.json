@@ -10,27 +10,26 @@
 		"format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "^1.0.0-next.35",
-		"@sveltejs/kit": "^1.0.0-next.367",
-		"autoprefixer": "^10.4.7",
-		"eslint": "^8.20.0",
+		"@sveltejs/adapter-static": "^1.0.0-next.43",
+		"@sveltejs/kit": "^1.0.0-next.504",
+		"autoprefixer": "^10.4.12",
+		"eslint": "^8.24.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte3": "^4.0.0",
-		"postcss": "^8.4.14",
+		"postcss": "^8.4.16",
 		"prettier": "^2.7.1",
-		"prettier-plugin-svelte": "^2.7.0",
-		"svelte": "^3.49.0",
-		"tailwindcss": "^3.1.6"
+		"prettier-plugin-svelte": "^2.7.1",
+		"svelte": "^3.50.1",
+		"tailwindcss": "^3.1.8"
 	},
 	"type": "module",
 	"dependencies": {
-		"@fortawesome/free-brands-svg-icons": "^6.1.2",
-		"@fortawesome/free-solid-svg-icons": "^6.1.2",
-		"@sveltejs/adapter-static": "^1.0.0-next.39",
+		"@fortawesome/free-brands-svg-icons": "^6.2.0",
+		"@fortawesome/free-solid-svg-icons": "^6.2.0",
 		"@svgdotjs/svg.js": "^3.1.2",
-		"daisyui": "^2.22.0",
+		"daisyui": "^2.31.0",
 		"delaunator": "^5.0.0",
 		"svelte-fa": "^3.0.3",
-		"vite": "^3.0.3"
+		"vite": "^3.1.3"
 	}
 }
