@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { SVG } from '@svgdotjs/svg.js';
 	import { zoom } from '$lib/svg_util';
 	import Fa from 'svelte-fa';
@@ -41,7 +41,7 @@
 	};
 </script>
 
-<div
+<button
 	class:hidden
 	class="opacity-40 absolute top-8 cursor-pointer"
 	style="left: 47%;"
@@ -50,7 +50,7 @@
 	}}
 >
 	<Fa size="lg" icon={faGear} />
-</div>
+</button>
 
 <div id="settings-modal" class="modal" class:modal-open={isModalOpen}>
 	<div class="modal-box relative">
