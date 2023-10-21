@@ -5,64 +5,47 @@
 		<meta name="description" content="" />
 		<link rel="icon" href="./triple_resolution_logo_white.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta http-equiv="content-security-policy" content="">
-		<link href="./_app/immutable/assets/_layout-06a06608.css" rel="stylesheet">
-		<link href="./_app/immutable/assets/_page-95b16411.css" rel="stylesheet">
-		<link rel="modulepreload" href="./_app/immutable/start-4425ecd1.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/index-e86652ff.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/singletons-d54ae153.js">
-		<link rel="modulepreload" href="./_app/immutable/components/pages/_layout.svelte-cc941f22.js">
-		<link rel="modulepreload" href="./_app/immutable/modules/pages/_layout.js-7b9cbfbc.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/_layout-8d2a742b.js">
-		<link rel="modulepreload" href="./_app/immutable/components/pages/_page.svelte-2cdb8b31.js">
+		
+		<link href="./_app/immutable/assets/0.dd56485a.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/2.95b16411.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.b4189bd6.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/scheduler.77af2d83.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.d2f20fb1.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.3ae8c739.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.7876ad47.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/0.d3a1c028.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/2.0b348ae1.js">
 
 		<script href="/node_modules/@fortawesome/fontawesome-free/js/all.js"></script>
 		<title>Triangulation</title>
 	</head>
 	<body>
-		<div class="flex-col min-h-screen max-h-screen overflow-hidden">
+		<div class="flex-col min-h-screen max-h-screen overflow-hidden">   <div class="flex min-h-screen max-h-screen justify-center align-middle"><button class="opacity-40 absolute top-8 cursor-pointer hidden" style="left: 47%;"><svg class="svelte-fa  svelte-1cj2gr0" style="height:1em;line-height:.75em;font-size:1.33333em;vertical-align:-.225em;transform-origin:center;overflow:visible" viewBox="0 0 512 512" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg"><g transform="translate(256 256)" transform-origin="128 0"><g transform="translate(0,0) scale(1,1)"><path d="M495.9 166.6c3.2 8.7 .5 18.4-6.4 24.6l-43.3 39.4c1.1 8.3 1.7 16.8 1.7 25.4s-.6 17.1-1.7 25.4l43.3 39.4c6.9 6.2 9.6 15.9 6.4 24.6c-4.4 11.9-9.7 23.3-15.8 34.3l-4.7 8.1c-6.6 11-14 21.4-22.1 31.2c-5.9 7.2-15.7 9.6-24.5 6.8l-55.7-17.7c-13.4 10.3-28.2 18.9-44 25.4l-12.5 57.1c-2 9.1-9 16.3-18.2 17.8c-13.8 2.3-28 3.5-42.5 3.5s-28.7-1.2-42.5-3.5c-9.2-1.5-16.2-8.7-18.2-17.8l-12.5-57.1c-15.8-6.5-30.6-15.1-44-25.4L83.1 425.9c-8.8 2.8-18.6 .3-24.5-6.8c-8.1-9.8-15.5-20.2-22.1-31.2l-4.7-8.1c-6.1-11-11.4-22.4-15.8-34.3c-3.2-8.7-.5-18.4 6.4-24.6l43.3-39.4C64.6 273.1 64 264.6 64 256s.6-17.1 1.7-25.4L22.4 191.2c-6.9-6.2-9.6-15.9-6.4-24.6c4.4-11.9 9.7-23.3 15.8-34.3l4.7-8.1c6.6-11 14-21.4 22.1-31.2c5.9-7.2 15.7-9.6 24.5-6.8l55.7 17.7c13.4-10.3 28.2-18.9 44-25.4l12.5-57.1c2-9.1 9-16.3 18.2-17.8C227.3 1.2 241.5 0 256 0s28.7 1.2 42.5 3.5c9.2 1.5 16.2 8.7 18.2 17.8l12.5 57.1c15.8 6.5 30.6 15.1 44 25.4l55.7-17.7c8.8-2.8 18.6-.3 24.5 6.8c8.1 9.8 15.5 20.2 22.1 31.2l4.7 8.1c6.1 11 11.4 22.4 15.8 34.3zM256 336a80 80 0 1 0 0-160 80 80 0 1 0 0 160z" fill="currentColor" transform="translate(-256 -256)"></path></g></g></svg></button> <div id="settings-modal" class="modal"><div class="modal-box relative"><label for="settings-modal" class="btn btn-sm btn-circle absolute right-4 top-4" data-svelte-h="svelte-l0t8y6">✕</label> <h3 class="font-bold text-lg" data-svelte-h="svelte-12c9u9u">Settings</h3> <label for="point-radius" class="mr-2" data-svelte-h="svelte-1ft1gvy">Point Radius</label> <input id="point-radius" class="input" type="number" value="10"></div></div> <svg class="border-2 hidden" height="0" width="0" viewBox="0,0,0,0"></svg> <div role="button" tabindex="0" class="opacity-40 absolute top-8 cursor-pointer hidden" style="left: 97%;"><svg class="svelte-fa  svelte-1cj2gr0" style="height:1em;line-height:.75em;font-size:1.33333em;vertical-align:-.225em;transform-origin:center;overflow:visible" viewBox="0 0 512 512" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg"><g transform="translate(256 256)" transform-origin="128 0"><g transform="translate(0,0) scale(1,1)"><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z" fill="currentColor" transform="translate(-256 -256)"></path></g></g></svg></div> <svg class="border-2 hidden" width="0" height="0" viewBox="0,0,0,0"></svg> <canvas class="hidden"></canvas> <div class="flex"><div class="m-auto"><input hidden type="file" id="file-btn"> <label for="file-btn" class="bg-red-700 text-white py-2 px-4 rounded cursor-pointer" data-svelte-h="svelte-1b6k5cj">Choose Image File</label></div> <div class="ml-2 m-auto"><div data-tooltip="Choose an image file to get started!" class="tooltip"><svg class="svelte-fa  svelte-1cj2gr0" style="height:1em;line-height:.75em;font-size:1.33333em;vertical-align:-.225em;transform-origin:center;overflow:visible" viewBox="0 0 512 512" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg"><g transform="translate(256 256)" transform-origin="128 0"><g transform="translate(0,0) scale(1,1)"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" fill="currentColor" transform="translate(-256 -256)"></path></g></g></svg></div></div></div></div> 
+			
+			<script>
+				{
+					__sveltekit_1pa39z0 = {
+						base: new URL(".", location).pathname.slice(0, -1),
+						env: {}
+					};
 
+					const element = document.currentScript.parentElement;
 
+					const data = [null,null];
 
-
-<div class="flex min-h-screen max-h-screen justify-center align-middle"><div class="opacity-40 absolute top-8 cursor-pointer hidden" style="left: 47%;"><svg class="svelte-fa  svelte-1cj2gr0" style="height:1em;line-height:.75em;font-size:1.33333em;vertical-align:-.225em;transform-origin:center;overflow:visible" viewBox="0 0 512 512" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg"><g transform="translate(256 256)" transform-origin="128 0"><g transform="translate(0,0) scale(1,1)"><path d="M495.9 166.6c3.2 8.7 .5 18.4-6.4 24.6l-43.3 39.4c1.1 8.3 1.7 16.8 1.7 25.4s-.6 17.1-1.7 25.4l43.3 39.4c6.9 6.2 9.6 15.9 6.4 24.6c-4.4 11.9-9.7 23.3-15.8 34.3l-4.7 8.1c-6.6 11-14 21.4-22.1 31.2c-5.9 7.2-15.7 9.6-24.5 6.8l-55.7-17.7c-13.4 10.3-28.2 18.9-44 25.4l-12.5 57.1c-2 9.1-9 16.3-18.2 17.8c-13.8 2.3-28 3.5-42.5 3.5s-28.7-1.2-42.5-3.5c-9.2-1.5-16.2-8.7-18.2-17.8l-12.5-57.1c-15.8-6.5-30.6-15.1-44-25.4L83.1 425.9c-8.8 2.8-18.6 .3-24.5-6.8c-8.1-9.8-15.5-20.2-22.1-31.2l-4.7-8.1c-6.1-11-11.4-22.4-15.8-34.3c-3.2-8.7-.5-18.4 6.4-24.6l43.3-39.4C64.6 273.1 64 264.6 64 256s.6-17.1 1.7-25.4L22.4 191.2c-6.9-6.2-9.6-15.9-6.4-24.6c4.4-11.9 9.7-23.3 15.8-34.3l4.7-8.1c6.6-11 14-21.4 22.1-31.2c5.9-7.2 15.7-9.6 24.5-6.8l55.7 17.7c13.4-10.3 28.2-18.9 44-25.4l12.5-57.1c2-9.1 9-16.3 18.2-17.8C227.3 1.2 241.5 0 256 0s28.7 1.2 42.5 3.5c9.2 1.5 16.2 8.7 18.2 17.8l12.5 57.1c15.8 6.5 30.6 15.1 44 25.4l55.7-17.7c8.8-2.8 18.6-.3 24.5 6.8c8.1 9.8 15.5 20.2 22.1 31.2l4.7 8.1c6.1 11 11.4 22.4 15.8 34.3zM256 336c44.2 0 80-35.8 80-80s-35.8-80-80-80s-80 35.8-80 80s35.8 80 80 80z" fill="currentColor" transform="translate(-256 -256)"></path></g></g></svg></div>
-
-<div id="settings-modal" class="modal"><div class="modal-box relative"><label for="settings-modal" class="btn btn-sm btn-circle absolute right-4 top-4">✕
-		</label>
-		<h3 class="font-bold text-lg">Settings</h3>
-		<label for="point-radius" class="mr-2">Point Radius</label>
-		<input id="point-radius" class="input" type="number" value="10"></div></div>
-
-<svg class="border-2 hidden" height="0" width="0" viewBox="0,0,0,0"></svg>
-	<div class="opacity-40 absolute top-8 cursor-pointer hidden" style="left: 97%;"><svg class="svelte-fa  svelte-1cj2gr0" style="height:1em;line-height:.75em;font-size:1.33333em;vertical-align:-.225em;transform-origin:center;overflow:visible" viewBox="0 0 512 512" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg"><g transform="translate(256 256)" transform-origin="128 0"><g transform="translate(0,0) scale(1,1)"><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zM432 456c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z" fill="currentColor" transform="translate(-256 -256)"></path></g></g></svg></div>
-
-<svg class="border-2 hidden" width="0" height="0" viewBox="0,0,0,0"></svg>
-	<canvas class="hidden"></canvas>
-	<div class="flex"><div class="m-auto"><input hidden type="file" id="file-btn">
-<label for="file-btn" class="bg-red-700 text-white py-2 px-4 rounded cursor-pointer">Choose Image File
-</label></div>
-		<div class="ml-2 m-auto"><div data-tooltip="Choose an image file to get started!" class="tooltip"><svg class="svelte-fa  svelte-1cj2gr0" style="height:1em;line-height:.75em;font-size:1.33333em;vertical-align:-.225em;transform-origin:center;overflow:visible" viewBox="0 0 512 512" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg"><g transform="translate(256 256)" transform-origin="128 0"><g transform="translate(0,0) scale(1,1)"><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-144c-17.7 0-32-14.3-32-32s14.3-32 32-32s32 14.3 32 32s-14.3 32-32 32z" fill="currentColor" transform="translate(-256 -256)"></path></g></g></svg></div></div></div></div>
-
-
-		<script type="module" data-sveltekit-hydrate="1xw46zz">
-			import { start } from "./_app/immutable/start-4425ecd1.js";
-
-			start({
-				env: {},
-				hydrate: {
-					status: 200,
-					error: null,
-					node_ids: [0, 2],
-					params: {},
-					routeId: "",
-					data: (function(a){return [a,a]}(null)),
-					form: null
-				},
-				paths: {"base":"","assets":""},
-				target: document.querySelector('[data-sveltekit-hydrate="1xw46zz"]').parentNode,
-				trailing_slash: "never"
-			});
-		</script>
-	</div>
+					Promise.all([
+						import("./_app/immutable/entry/start.b4189bd6.js"),
+						import("./_app/immutable/entry/app.3ae8c739.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 2],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
 	</body>
 </html>
