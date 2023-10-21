@@ -1,11 +1,11 @@
-<script>
+<script lang="ts">
 	import Delaunator from 'delaunator';
 	import { SVG } from '@svgdotjs/svg.js';
 	import { zoom } from '$lib/svg_util';
 	import Fa from 'svelte-fa';
 	import { faDownload } from '@fortawesome/free-solid-svg-icons/faDownload';
 
-	export let canvas;
+	export let canvas: HTMLCanvasElement;
 	export let inputSVG;
 	export let outputSVG = undefined;
 	export let pointCount;
@@ -57,7 +57,7 @@
 		coordinates = currentCoordinates;
 	};
 
-	const getRGBString = (colorArray) => {
+	const getRGBString = (colorArray: string) => {
 		return `rgb(${colorArray[0]}, ${colorArray[1]}, ${colorArray[2]})`;
 	};
 
@@ -77,6 +77,13 @@
 
 <div
 	on:click={downloadSVG}
+	on:keypress={(e) => {
+		if (e.code === 'Enter') {
+			downloadSVG();
+		}
+	}}
+	role="button"
+	tabindex="0"
 	class:hidden
 	class="opacity-40 absolute top-8 cursor-pointer"
 	style="left: 97%;"

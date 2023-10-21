@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { SVG } from '@svgdotjs/svg.js';
 	import InputSVG from '$lib/input_svg.svelte';
 	import FileInput from '$lib/file_input.svelte';
@@ -7,9 +7,9 @@
 	import Fa from 'svelte-fa';
 	import { faCircleInfo } from '@fortawesome/free-solid-svg-icons/faCircleInfo';
 
-	let canvas;
-	let inputSVG;
-	let outputSVG;
+	let canvas: HTMLCanvasElement;
+	let inputSVG: InputSVG;
+	let outputSVG: OutputSVG;
 	let pointCount;
 	let innerWidth = 0;
 	let innerHeight = 0;

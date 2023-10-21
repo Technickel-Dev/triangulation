@@ -1,5 +1,7 @@
-<script>
-	export let onFileChange;
+<script lang="ts">
+	import type { ChangeEventHandler } from 'svelte/elements';
+
+	export let onFileChange: ChangeEventHandler<HTMLInputElement>;
 </script>
 
 <input hidden type="file" id="file-btn" on:change={onFileChange} />
