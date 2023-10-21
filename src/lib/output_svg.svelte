@@ -97,7 +97,7 @@
 	class="border-2"
 	width={innerWidth / 2}
 	height={innerHeight}
-	viewBox={`[0, 0, ${innerWidth / 2}, ${innerHeight}]`}
+	viewBox={[0, 0, innerWidth / 2, innerHeight]}
 	on:mousewheel={(e) => {
 		zoom(e, outputSVG, outputSVG.getAttribute('viewBox').split(/\s+|,/));
 	}}
