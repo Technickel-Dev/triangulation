@@ -51,7 +51,7 @@
 <div class="flex min-h-screen max-h-screen justify-center align-middle">
 	<InputSVG bind:inputSVG bind:pointCount {innerWidth} {innerHeight} {hidden} />
 	<OutputSVG bind:outputSVG {inputSVG} {canvas} {pointCount} {innerWidth} {innerHeight} {hidden} />
-	<canvas class="hidden" bind:this={canvas} />
+	<canvas class="hidden" bind:this={canvas}></canvas>
 	<div class:hidden={!hidden} class="flex">
 		<div class="m-auto">
 			<FileInput {onFileChange} />
