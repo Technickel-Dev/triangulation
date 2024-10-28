@@ -54,15 +54,14 @@
 
 <div id="settings-modal" class="modal" class:modal-open={isModalOpen}>
 	<div class="modal-box relative">
-		<label
-			for="settings-modal"
+		<button
 			class="btn btn-sm btn-circle absolute right-4 top-4"
 			on:click={() => {
 				isModalOpen = false;
 			}}
 		>
 			✕
-		</label>
+		</button>
 		<h3 class="font-bold text-lg">Settings</h3>
 		<label for="point-radius" class="mr-2">Point Radius</label>
 		<input id="point-radius" class="input" type="number" bind:value={pointRadius} />
@@ -72,7 +71,10 @@
 <svg
 	class:hidden
 	class="border-2"
+	role="button"
+	tabindex="0"
 	on:click={handleClick}
+	on:keydown={handleClick}
 	bind:this={inputSVG}
 	on:mousewheel={(e) => {
 		zoom(e, inputSVG, inputSVG.getAttribute('viewBox').split(/\s+|,/));
